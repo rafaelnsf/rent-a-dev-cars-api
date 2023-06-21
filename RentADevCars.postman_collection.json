@@ -1,0 +1,716 @@
+{
+	"info": {
+		"_postman_id": "2a170305-4bf7-4be3-9fa3-122d695e8c51",
+		"name": "RentADevCars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Marca",
+			"item": [
+				{
+					"name": "Create Marca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"honda\",\r\n  \"proprietario\": \"Nome do Proprietário1\",\r\n  \"fundador\": \"Nome do Fundado2r\",\r\n  \"dataCriacao\": \"2022-01-02\",\r\n  \"sede\": \"Local da Sede japao\",\r\n  \"tipoVeiculos\": [\"SUV\", \"SEDAN\", \"ESPORTIVO\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/marca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"marca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Marca valida criacao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"honda\",\r\n  \"proprietario\": \"Nome do Proprietário1\",\r\n  \"fundador\": \"Nome do Fundado2r\",\r\n  \"dataCriacao\": \"2025-01-02\",\r\n  \"sede\": \"Local da Sede japao\",\r\n  \"tipoVeiculos\": [\"SUV\", \"SEDAN\", \"ESPORTIVO\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/marca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"marca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/marca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"marca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/marca/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"marca",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"honda1234\",\r\n  \"proprietario\": \"Nome do Proprietário1\",\r\n  \"fundador\": \"Nome do Fundado2r\",\r\n  \"dataCriacao\": \"2022-01-02\",\r\n  \"sede\": \"Local da Sede japao\",\r\n  \"tipoVeiculos\": [\"SUV\", \"SEDAN\", \"ESPORTIVO\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/marca/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"marca",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/marca/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"marca",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Automovel",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"corsa\",\r\n  \"marca\": {\r\n    \"id\": 1,\r\n    \"nome\": \"honda\"\r\n  },\r\n  \"valorDiaria\": \"100\",\r\n  \"valorVeiculo\": \"20000\",\r\n  \"kmRodado\": \"5000\",\r\n  \"ano\": \"2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida diaria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"corsa\",\r\n  \"marca\": {\r\n    \"id\": 1,\r\n    \"nome\": \"honda\"\r\n  },\r\n  \"valorDiaria\": \"99\",\r\n  \"valorVeiculo\": \"20000\",\r\n  \"kmRodado\": \"5000\",\r\n  \"ano\": \"2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida valor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"corsa\",\r\n  \"marca\": {\r\n    \"id\": 1,\r\n    \"nome\": \"honda\"\r\n  },\r\n  \"valorDiaria\": \"100\",\r\n  \"valorVeiculo\": \"254540000\",\r\n  \"kmRodado\": \"5000\",\r\n  \"ano\": \"2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida ano",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"corsa\",\r\n  \"marca\": {\r\n    \"id\": 2,\r\n    \"nome\": \"honda\"\r\n  },\r\n  \"valorDiaria\": \"100.00\",\r\n  \"valorVeiculo\": \"20000.00\",\r\n  \"kmRodado\": \"5000\",\r\n  \"ano\": \"1950\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida kmrodado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"corsa\",\r\n  \"marca\": {\r\n    \"id\": 2,\r\n    \"nome\": \"honda\"\r\n  },\r\n  \"valorDiaria\": \"100.00\",\r\n  \"valorVeiculo\": \"20000.00\",\r\n  \"kmRodado\": \"35548488\",\r\n  \"ano\": \"1999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/automoveis/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nome\": \"corsa123\",\r\n  \"marca\": {\r\n    \"id\": 2,\r\n    \"nome\": \"honda\"\r\n  },\r\n  \"valorDiaria\": \"100.00\",\r\n  \"valorVeiculo\": \"20000.00\",\r\n  \"kmRodado\": \"5000\",\r\n  \"ano\": \"2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/automoveis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/automoveis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"automoveis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aluguel Automovel",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"veiculo\": {\r\n    \"id\": 1,\r\n    \"nome\": \"corsa\"\r\n  },\r\n  \"nomeCliente\": \"Nome do Cliente1\",\r\n  \"cpf\": \"123456789\",\r\n  \"dataInicial\": \"2023-06-19\",\r\n  \"dataEntrega\": \"2023-06-23\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida entrega > inicial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"veiculo\": {\r\n    \"id\": 1,\r\n    \"nome\": \"corsa\"\r\n  },\r\n  \"nomeCliente\": \"Nome do Cliente1\",\r\n  \"cpf\": \"123456789\",\r\n  \"dataInicial\": \"2024-06-19\",\r\n  \"dataEntrega\": \"2022-08-25\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida data inicial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"veiculo\": {\r\n    \"id\": 1,\r\n    \"nome\": \"corsa\"\r\n  },\r\n  \"nomeCliente\": \"Nome do Cliente1\",\r\n  \"cpf\": \"123456789\",\r\n  \"dataInicial\": \"2022-06-19\",\r\n  \"dataEntrega\": \"2023-06-30\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create valida CPF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"veiculo\": {\r\n    \"id\": 1,\r\n    \"nome\": \"corsa\"\r\n  },\r\n  \"nomeCliente\": \"Nome do Cliente1\",\r\n  \"cpf\": \"123456789\",\r\n  \"dataInicial\": \"2023-07-09\",\r\n  \"dataEntrega\": \"2023-08-30\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"veiculo\": {\r\n    \"id\": 1,\r\n    \"nome\": \"corsa\"\r\n  },\r\n  \"nomeCliente\": \"Nome do Cliente12\",\r\n  \"cpf\": \"123456789\",\r\n  \"dataInicial\": \"2023-06-19\",\r\n  \"dataEntrega\": \"2023-06-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/aluguel-automoveis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aluguel-automoveis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipos Veiculos",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"SUV\",\r\n  \"descricao\": \"carro grande\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/tipos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Valida nome",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"SU\",\r\n  \"descricao\": \"carro grande\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/tipos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tipos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tipos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"SUV\",\r\n  \"descricao\": \"carro grande\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/tipos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tipos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
