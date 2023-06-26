@@ -35,12 +35,10 @@ export class AutomoveisService {
 
   validate(automovel: Automovel) {
     const automovelYear = new Date(automovel.ano).getFullYear();
-    console.log("automovelYear", automovelYear);
     if (1970 >= automovelYear) {
       throw new BadRequestException("O ano do automóvel deve ser maior que 1970");
     }
     const kmRodado = parseInt(automovel.kmRodado);
-    console.log(kmRodado);
     if (kmRodado >= 200000) {
       throw new BadRequestException("km rodado do veiculo deve ser menor que 200000");
     }

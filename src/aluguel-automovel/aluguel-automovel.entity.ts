@@ -1,12 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 import { Automovel } from "../automoveis/automovel.entity";
 
-@Entity({ name: "alugueis-automoveis" })
+@Entity({ name: "alugueis_automoveis" })
 export class AluguelAutomovel {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Automovel)
+  @ManyToOne(() => Automovel, (automovel) => automovel.alugueis)
+  @JoinColumn({ name: "veiculo_id" })
   veiculo: Automovel;
 
   @Column({ name: "nome_cliente" })
